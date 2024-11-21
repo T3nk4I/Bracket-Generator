@@ -1,0 +1,176 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+<style>
+  th {
+    color: #fff;
+  }
+</style>
+<h1>Generador de bracket para torneos</h1>
+<p>Seleccione el número de prototipos por grupo</p>
+<select id="select-num">
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+</select>
+<table class="table table-striped">
+  <thead>
+    <tr class="bg-info">
+      <th>Nombre del prototipo</th>
+      <th>Victorias</th>
+      <th>Derrotas</th>
+      <th>Puntos</th>
+    </tr>
+  </thead>
+  <tbody id="myTable"></tbody>
+</table>
+
+<script>
+  const myArray = [
+    "Titanoid",
+    "Cytronic",
+    "Helionix",
+    "Gearus",
+    "Pulsar-X",
+    "Automatrix",
+    "Fluxion",
+    "Metabot",
+    "Draxon",
+    "Voltis",
+    "Aegiron",
+    "Quantum-Bot",
+    "Drivex",
+    "Megacore",
+    "Zycron",
+    "Turbinex",
+    "Chronobot",
+    "Nanobot-X",
+	"Aegisron",
+	"Mechadox",
+	"Synthrax",
+	"Voltronic",
+	"Nexarion",
+	"Gearshift",
+	"Turbobot",
+	"Metallion",
+	"Hexadrone",
+	"Boltix",
+	"Quantumix",
+	"Pulsatrix",
+	"Chronobot",
+	"Deltabot",
+	"Automatax",
+	"Flexiron",
+	"Sparkus",
+	"Helionoid",
+	"Fluxbot",
+	"Coretrix",
+	"Cylindrax",
+	"Dynamo-X",
+	"Oscilbot",
+	"Neutrobot",
+	"Tridentron",
+	"Magnetron",
+	"Axisron",
+	"Gravibot",
+	"Pixelion",
+	"Techrodon",
+	"Protektor",
+	"Glitch-X",
+	"Mechavor",
+	"Parallax",
+	"Optibot",
+	"Helixor",
+	"Ramtron",
+	"Torqueon",
+	"Servo-X",
+	"Cyberbolt",
+	"Electronix",
+	"Mechanor",
+	"Gigadroid",
+	"Nanodroid",
+	"Infernotron",
+	"Hydraxon",
+	"Statrix",
+	"Energex",
+	"Galvantron",
+	"Arcadroid",
+	"Sparkatron",
+	"Obelisk-X",
+	"Turboid",
+	"Refractron",
+	"Omni-Mech",
+	"Cylindrix",
+	"Powerforge",
+	"Voltazoid",
+	"Stormtrax",
+	"Ironwave",
+	"Thunderclank",
+	"Pyrodroid",
+	"Electronom",
+	"Axionix",
+	"Cryptobot",
+	"Zenithron",
+	"Scalebot",
+	"Radiobot",
+	"Astronix",
+	"Protoforge",
+	"Botanoid",
+	"Mechaflux"
+  ];
+
+  // Shuffle the array once
+  shuffleArray(myArray);
+
+  // Add an event listener to the dropdown
+  document.getElementById("select-num").addEventListener("change", function () {
+    const chunkSize = parseInt(this.value); // Get the selected number
+    generateGroups(chunkSize);
+  });
+
+  // Initial generation with default value
+  generateGroups(parseInt(document.getElementById("select-num").value));
+
+  function generateGroups(chunkSize) {
+    const tableBody = document.getElementById("myTable");
+    tableBody.innerHTML = ""; // Clear the table content
+
+    let groupNumber = 1;
+    for (let i = 0; i < myArray.length; i += chunkSize) {
+      const chunk = myArray.slice(i, i + chunkSize);
+
+      // Add group header
+      tableBody.innerHTML += `<tr><td colspan="4" style="background-color:DodgerBlue; color:white; text-align:center;">Grupo ${groupNumber}</td></tr>`;
+
+      // Add group members
+      buildTable(chunk, tableBody);
+      groupNumber++;
+    }
+  }
+
+  function buildTable(data, tableBody) {
+    for (let i = 0; i < data.length; i++) {
+      const row = `<tr>
+                    <td>${data[i]}</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                 </tr>`;
+      tableBody.innerHTML += row;
+    }
+  }
+
+  function shuffleArray(array) {
+    let currentIndex = array.length;
+    while (currentIndex != 0) {
+      const randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+  }
+</script>
