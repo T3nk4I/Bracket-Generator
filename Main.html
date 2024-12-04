@@ -1,40 +1,47 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-  crossorigin="anonymous"
-/>
-<style>
-  th {
-    color: #fff;
-  }
-</style>
-<h1>Generador de bracket para torneos</h1>
-<p>Seleccione el numero de prototipos por grupo</p>
-<select id="select-num">
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-</select>
-<button id="randomize">Mezclar tabla</button>
-<button id="update">Actualizar tabla</button>
-<table class="table table-striped">
-  <thead>
-    <tr class="bg-info">
-      <th>Nombre del prototipo</th>
-      <th>Victorias</th>
-      <th>Derrotas</th>
-      <th data-column = "points" data-order ="desc">Puntos</th>
-    </tr>
-  </thead>
-  <tbody id="myTable"></tbody>
-</table>
-<ul id="winnersList">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 
-</ul>
+<body>
+  <h1>Generador de bracket para torneos</h1>
+  <p>Seleccione el numero de prototipos por grupo</p>
+  <select id="select-num">
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+  </select>
+  <button id="randomize">Mezclar tabla</button>
+  <button id="update">Actualizar tabla</button>
+  <table class="table table-striped">
+    <thead>
+      <tr class="bg-info">
+        <th>Nombre del prototipo</th>
+        <th>Victorias</th>
+        <th>Derrotas</th>
+        <th data-column = "points" data-order ="desc">Puntos</th>
+      </tr>
+    </thead>
+    <tbody id="myTable"></tbody>
+  </table>
+  <ul id="winnersList">
+
+  </ul>
+</body>
 
 <script src = "createTable.js">
   
 </script>
+</html> 

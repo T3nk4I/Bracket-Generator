@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+<style>
+  th {
+    color: #fff;
+  }
+</style>
+<body>
+  <h1>Generador de bracket para torneos</h1>
+  <div>
+    <p>Seleccione el numero de prototipos por grupo</p>
+    <select id="select-num">
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+  </div>
+  <div>
+    <table class="table table-striped">
+      <tr>
+          <th>Nombre del prototipo</th>
+          <th>Victorias</th>
+          <th>Derrotas</th>
+          <th>Puntos</th>
+      </tr>
+      <tbody id="myTable">
+
+      </tbody>
+    </table>
+  </div> 
+  
+</body>
+
+<script src = "groupPhase.js">
+  
+</script>
+</html>
