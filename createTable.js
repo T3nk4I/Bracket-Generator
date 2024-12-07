@@ -1,5 +1,5 @@
 // Initial array of prototypes
-let myArray = [
+let myArray = [/* cSpell:disable */
     "Titanoid", "Cytronic", "Helionix", "Gearus", "Pulsar-X", "Automatrix",
     "Fluxion", "Metabot", "Draxon", "Voltis", "Aegiron", "Quantum-Bot",
     //"Drivex", "Megacore", "Zycron", "Turbinex", "Chronobot", "Nanobot-X",
