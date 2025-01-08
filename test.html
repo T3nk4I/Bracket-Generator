@@ -6,45 +6,49 @@
   <title>Document</title>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-  crossorigin="anonymous"
-/>
-<style>
-  th {
-    color: #fff;
-  }
-</style>
+<link rel="stylesheet" href="styles.css"/>
 <body>
-  <h1>Generador de bracket para torneos</h1>
-  <div>
-    <p>Seleccione el numero de prototipos por grupo</p>
-    <select id="select-num">
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-    </select>
-  </div>
-  <div>
-    <table class="table table-striped">
-      <tr>
-          <th>Nombre del prototipo</th>
-          <th>Victorias</th>
-          <th>Derrotas</th>
-          <th>Puntos</th>
-      </tr>
-      <tbody id="myTable">
-
-      </tbody>
-    </table>
-  </div> 
-  
+  <nav>
+    <div class="centerItems">
+      <h1>Generador de bracket para torneos</h1>
+      <button type="button">Options</button>
+      <button type="button">About</button>
+    </div>
+  </nav>
+  <aside>
+    <h2 class="sidebarTitle">Categories</h2>
+  </aside>
+  <main>
+    <button id="btnSettings">Settings</button>
+    <div id="modalSettings" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Seleccione el numero de prototipos por grupo</p>
+        <select id="select-num">
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <table class="table table-striped">
+        <tr>
+            <th>Nombre del prototipo</th>
+            <th>Victorias</th>
+            <th>Derrotas</th>
+            <th>Puntos</th>
+        </tr>
+        <tbody id="myTable">
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>
+    Made by T3nk4I
+    <a href="https://github.com/T3nk4I">Github</a>
+  </footer>
 </body>
-
-<script src = "groupPhase.js">
-  
-</script>
+<script src = "groupPhase.js"></script>
 </html>
